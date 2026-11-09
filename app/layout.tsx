@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import AuthRecoveryRedirect from "./AuthRecoveryRedirect";
+import MigrationBanner from "./components/MigrationBanner";
 import "./globals.css";
 
 const AppShell = dynamic(() => import("./components/AppShell"), { ssr: false });
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <AuthRecoveryRedirect />
         <AppShell>{children}</AppShell>
+        <MigrationBanner />
       </body>
     </html>
   );
